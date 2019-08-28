@@ -2,7 +2,7 @@
 
 By default, browsers display images at their [“density-corrected intrinsic size”](https://html.spec.whatwg.org/multipage/images.html#density-corrected-intrinsic-width-and-height). [An 800×600, 1x image will display at 800×600 CSS `px`](https://codepen.io/eeeps/pen/mdbmbPq). [A 1600×1200, 2x image will *also* display at 800×600 CSS `px`](https://codepen.io/eeeps/pen/mdbmbEq). Even though the two images have different resource dimensions, as far as layout is concerned, they are identically-sized.
 
-The `Content-DPR` response header gives servers control over the density part of that equation, allowing them to serve arbitrarily-scaled responses without affecting (and breaking) layouts.
+[The `Content-DPR` response header](https://whatpr.org/html/3774/e32a6f8...ddb0544/images.html#content-dpr) gives servers control over the density part of that equation, allowing them to serve arbitrarily-scaled responses without affecting (and breaking) layouts.
 
 ## Example
 
@@ -24,7 +24,7 @@ But first—
 
 ## The Client Hints use case 
 
-Let's say a page author has chosen to craft a variable-device-pixel-ratio responsive image, with `srcset`.
+Let’s say a page author has chosen to craft a variable-device-pixel-ratio responsive image, with `srcset`.
 
 Their markup might look like this:
 
@@ -39,7 +39,7 @@ Their markup might look like this:
 
 No matter which resource the browser selects, the density-corrected intrinsic size of the `<img>` will always be the same.
 
-Here’s the equivalent Client Hints markup:
+Here’s the equivalent client Hints markup:
 
 ```html
 <img
@@ -48,7 +48,7 @@ Here’s the equivalent Client Hints markup:
 />
 ```
 
-Let's say this request goes out from [a 2.6x device](https://vizdevices.yesviz.com/devices/google-pixel2/), with the following hint:
+Let’s say this request goes out from [a 2.6x device](https://vizdevices.yesviz.com/devices/google-pixel2/), with the following hint:
 
 ```
 DPR: 2.6
@@ -80,11 +80,11 @@ If the server has been given some signal that the user is in a constrained-bandw
 
 Authors [commonly](https://jmperezperez.com/more-progressive-image-loading/) serve up [low-quality versions of images as placeholders](https://www.guypo.com/introducing-lqip-low-quality-image-placeholders), so that *something* is visible immediately, even if the full image load has been intentionally deferred (via lazy-loading), or is simply slow.
 
-Right now, these techniques require some work on the front end to ensure that the downscaled placeholder is stretched to match the final dimensions of the full image.
+Right now, these techniques require some work on the front end to ensure that the downscaled placeholder is stretched to match the final dimensions of the full image. `Content-DPR` would allow servers to implement foolproof features that could respond to requests, for, say,
 
-`Content-DPR` would allow servers to implement foolproof features that could respond to requests, for, say,
-
-`https://give.me/the-img.jpg?placeholder=true`
+```
+https://give.me/the-img.jpg?placeholder=true
+```
 
 with downscaled images that behaved just like their full-scale counterparts, as far as layout is concerned.
 
