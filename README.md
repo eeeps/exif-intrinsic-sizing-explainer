@@ -64,7 +64,7 @@ This ensures that, when the image arrives, the client knows its density, and it 
 
 ## Other use cases
 
-But even in browsers that don’t implement the `Width`, `DPR`, and `Viewport-Width` request hints, support for the `Content-DPR` response header would open up new opportunities for image servers (and CDNs) to perform image optimization via resizing, without risking breaking layouts that rely on images’ default (intrinsic) size.
+But even in browsers that don’t implement the `Width`, `DPR`, and `Viewport-Width` request hints, support for the `Content-DPR` response header would open up new opportunities for servers (and CDNs) to perform image optimization via resizing, without risking breaking layouts that rely on images’ default (intrinsic) size.
 
 For example:
 
