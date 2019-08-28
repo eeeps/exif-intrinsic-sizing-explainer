@@ -1,6 +1,6 @@
 # Content-DPR explainer
 
-By default, browsers display images at their [“density-corrected intrinsic size”](https://html.spec.whatwg.org/multipage/images.html#density-corrected-intrinsic-width-and-height). [An 800x600, 1x image will display at 800×600 CSS `px`](https://codepen.io/eeeps/pen/mdbmbPq). [A 1600×1200, 2x image will *also* display at 800×600 CSS `px`](https://codepen.io/eeeps/pen/mdbmbEq). Even though the two images have different resource dimensions, as far as layout is concerned, these they are identically-sized.
+By default, browsers display images at their [“density-corrected intrinsic size”](https://html.spec.whatwg.org/multipage/images.html#density-corrected-intrinsic-width-and-height). [An 800×600, 1x image will display at 800×600 CSS `px`](https://codepen.io/eeeps/pen/mdbmbPq). [A 1600×1200, 2x image will *also* display at 800×600 CSS `px`](https://codepen.io/eeeps/pen/mdbmbEq). Even though the two images have different resource dimensions, as far as layout is concerned, these they are identically-sized.
 
 The `Content-DPR` response header gives servers control over the density part of that equation, allowing them to serve arbitrarily-scaled responses without affecting (and breaking) layouts.
 
@@ -28,7 +28,7 @@ Let's say a page author has chosen to craft a variable-device-pixel-ratio respon
 
 Their markup might look like this:
 
-```
+```html
 <img
 	src="small.jpg"
 	srcset="medium.jpg 2x,
@@ -41,7 +41,7 @@ No matter which resource the browser selects, the density-corrected intrinsic si
 
 Here’s the equivalent Client Hints markup:
 
-```
+```html
 <img
 	src="client-hints.jpg"
 	alt="A DPR-responsive JPEG"
