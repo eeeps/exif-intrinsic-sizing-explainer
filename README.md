@@ -22,7 +22,7 @@ Notably, the header solves other important use cases, all on its own.
 
 But first—
 
-## The Client Hints use case 
+## The client hints use case 
 
 Let’s say a page author has chosen to craft a variable-device-pixel-ratio responsive image, with `srcset`.
 
@@ -39,7 +39,7 @@ Their markup might look like this:
 
 No matter which resource the browser selects, the density-corrected intrinsic size of the `<img>` will always be the same.
 
-Here’s the equivalent client Hints markup:
+Here’s the equivalent client hints markup:
 
 ```html
 <img
