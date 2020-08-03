@@ -88,6 +88,10 @@ https://give.me/the-img.jpg?placeholder=true
 
 with downscaled images that behaved just like their full-scale counterparts, as far as layout is concerned.
 
+### Small adjustments for big performance wins
 
+Rescaling by small amounts (especially when rescaling pixel-perfected or pallete-optimized images) is often a terrible choice, as anti-aliasing blurs edges and introduces many new colors. If a server is asked to produce a 909-pixel wide version of a 900-pixel-wide original, it is in everyone's best interest for the server to deliver the original, unmodified 900-pixel-wide-image, and tell the browser just to *treat it as if* it's 909-pixels wide by rescaling on the client.
+
+Simmilarly, some image formats (e.g., JPEG) encode images in "blocks," and perform more efficently when image dimensions align to block-boundaries. When cropping or rescaling to arbitrary targets, it would be nice for servers to be able to send an image whose dimensions are aligned to block boundaries – and then tell the browser to slightly scale the image up-or-down on the client side.
 
 
