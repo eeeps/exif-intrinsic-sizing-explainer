@@ -6,11 +6,11 @@ This proposal allows image resources to declare their own intrinsic dimensions a
 
 ## Useful links
 
-- [Spec]()
-- Browser issues: [Blink](), [WebKit](), [Firefox]()
-- [Web platform tests]()
-- [A script for quickly setting the relevant headers]()
-- [Original proposal and conversation]()
+- [Spec](https://github.com/whatwg/html/pull/5574)
+- Implementation bugs: [Blink](https://bugs.chromium.org/p/chromium/issues/detail?id=1069755), [WebKit](https://bugs.webkit.org/show_bug.cgi?id=212405), [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1680387)
+- [Web platform tests](https://wpt.fyi/results/density-size-correction/density-corrected-natural-size.html?label=master&label=stable&aligned)
+- [A script for quickly setting the relevant headers](https://github.com/eeeps/exif-resolution)
+- [Original proposal and conversation](https://discourse.wicg.io/t/proposal-exif-image-resolution-auto-and-from-image/4326)
 
 ## Example
 
