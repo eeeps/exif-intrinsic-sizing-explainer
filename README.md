@@ -41,7 +41,7 @@ EXIF-based intrinsic sizing solves a number of important use cases.
 
 ### The client hints use case 
 
-EXIF-based intrinsic sizing replaces the proposed [`Content-DPR` HTTP response header](https://tools.ietf.org/html/draft-grigorik-http-client-hints-03#section-3.1). `Content-DPR` was invented in conjunction with [the responsive image client hints](https://wicg.github.io/responsive-image-client-hints/), so that servers could respond to requests which included these hints with images of varying dimensions/density, without worrying about breaking layouts.
+EXIF-based intrinsic sizing [replaces](https://github.com/WICG/responsive-image-client-hints/issues/14) the proposed [`Content-DPR` HTTP response header](https://tools.ietf.org/html/draft-grigorik-http-client-hints-03#section-3.1). `Content-DPR` was invented in conjunction with [the responsive image client hints](https://wicg.github.io/responsive-image-client-hints/), so that servers could respond to requests which included these hints with images of varying dimensions/density, without worrying about breaking layouts.
 
 Let’s say a page author has chosen to embed a variable-device-pixel-ratio responsive image, using `srcset`. Like this:
 
